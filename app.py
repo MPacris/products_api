@@ -36,11 +36,21 @@ class Product(db.Model):
 
                       
 #Schemas
+class ProductSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "name", "description", "price", "inventory_quantity")
 
+product_schema = ProductSchema()
+products_schema = ProductSchema(many=True)
 
 
 # Resources
+class ProuctListResource(Resource):
+    def get(self):
+        all_products = Product.query.all()
+        return products_schema.dump(all_products)
 
 
 
 # Routes
+api.add_resource(ProuctListResource, '/api/products')
