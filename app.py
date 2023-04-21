@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_restful import Api, Resource
+from marshmallow import post_load, fields, ValidationError
 from dotenv import load_dotenv
 from os import environ
 
@@ -37,8 +38,19 @@ class Product(db.Model):
                       
 #Schemas
 class ProductSchema(ma.Schema):
+    id = fields.Integer(primary_key=True)
+    name = fields.String(required=True) 
+    description = fields.String(required=True)
+    price = fields.Float()
+    inventory_quantity = fields.Integer()
+
+
     class Meta:
         fields = ("id", "name", "description", "price", "inventory_quantity")
+
+    @post_load
+    def create_product(self, data, **kwargs):
+        return Product(**data)
 
 product_schema = ProductSchema()
 products_schema = ProductSchema(many=True)
@@ -51,17 +63,41 @@ class ProuctListResource(Resource):
         return products_schema.dump(all_products)
     
     def post(self):
-        print(request)
-        new_product =  Product(
-            price=request.json['price'],
-            name=request.json['name'],
-            inventory_quantity=request.json['inventory_quantity'],
-            description=request.json['description']
-        )
-        db.session.add(new_product)
+        form_data = request.get_json()
+        try:        
+            new_product = product_schema.load(form_data)
+            db.session.add(new_product)
+            db.session.commit()
+            return product_schema.dump(new_product), 201
+        except ValidationError as err:
+            return err.messages, 400
+
+class ProductResource(Resource):
+    def get(self, product_id):
+        product_from_db = Product.query.get_or_404(product_id)
+        return product_schema.dump(product_from_db)
+    
+    def delete(self, product_id):
+        product_from_db = Product.query.get_or_404(product_id)
+        db.session.delete(product_from_db)
+        return '', 204
+    
+    def put(self, product_id):
+        product_from_db = Product.query.get_or_404(product_id)
+
+        if 'name' in request.json:
+            product_from_db.name = request.json['name']
+        if 'description' in request.json:
+            product_from_db.description = request.json['description']       
+        if 'price' in request.json:
+            product_from_db.price = request.json['price']            
+        if 'inventory_quantity' in request.json:
+            product_from_db.inventory_quantity = request.json['inventory_quantity']
+        
         db.session.commit()
-        return product_schema.dump(new_product), 201
+        return product_schema.dump(product_from_db)
 
 
 # Routes
 api.add_resource(ProuctListResource, '/api/products')
+api.add_resource(ProductResource, '/api/products/<int:product_id>')
