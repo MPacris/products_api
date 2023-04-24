@@ -58,7 +58,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/4",
+					"raw": "http://127.0.0.1:5000/api/products/3",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,7 +70,7 @@
 					"path": [
 						"api",
 						"products",
-						"4"
+						"3"
 					]
 				}
 			},
@@ -116,7 +116,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"price\": 6.59,\r\n    \"name\": \"crayola colored pencils\",\r\n    \"description\": \"12 crayola colored pencils basic set\",\r\n    \"inventory_quantity\": 32,\r\n    \"id\": 6\r\n}\r\n",
+					"raw": "{\r\n    \"price\": 8.59,\r\n    \"id\": 6\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
