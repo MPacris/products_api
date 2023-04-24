@@ -80,6 +80,7 @@ class ProductResource(Resource):
     def delete(self, product_id):
         product_from_db = Product.query.get_or_404(product_id)
         db.session.delete(product_from_db)
+        db.session.commit()
         return '', 204
     
     def put(self, product_id):
