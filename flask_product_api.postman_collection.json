@@ -58,7 +58,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/3",
+					"raw": "http://127.0.0.1:5000/api/products/5",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,7 +70,7 @@
 					"path": [
 						"api",
 						"products",
-						"3"
+						"5"
 					]
 				}
 			},
@@ -91,7 +91,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/3",
+					"raw": "http://127.0.0.1:5000/api/products/2",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -103,7 +103,7 @@
 					"path": [
 						"api",
 						"products",
-						"3"
+						"2"
 					]
 				}
 			},
@@ -116,7 +116,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"price\": 8.59,\r\n    \"id\": 6\r\n}\r\n",
+					"raw": "{\r\n    \"price\": 32.59}\r\n\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -124,7 +124,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/6",
+					"raw": "http://127.0.0.1:5000/api/products/8",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -136,20 +136,20 @@
 					"path": [
 						"api",
 						"products",
-						"6"
+						"8"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Post New Product Copy",
+			"name": "Post New Product",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"description\": \"red_drinking_aparatus\",\r\n        \"name\": \"luzianne_glass\",\r\n        \"price\": 8.99,\r\n        \"inventory_quantity\": 3\r\n    }",
+					"raw": "  {\r\n        \"description\": \"beatles_mug\",\r\n        \"name\": \"beatles_crosswalk_img_white_mug\",\r\n        \"price\": 18.99,\r\n        \"inventory_quantity\": 23\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
