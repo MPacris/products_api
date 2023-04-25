@@ -58,7 +58,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/5",
+					"raw": "http://127.0.0.1:5000/api/products/1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,7 +70,7 @@
 					"path": [
 						"api",
 						"products",
-						"5"
+						"1"
 					]
 				}
 			},
@@ -116,7 +116,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"price\": 32.59}\r\n\r\n",
+					"raw": "{\r\n\r\n    \"image_url\": \"https://th.bing.com/th?id=OIP.iuzg3YEJ50tqSKDgls8xWwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2\"\r\n  }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -124,7 +124,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/8",
+					"raw": "http://127.0.0.1:5000/api/products/1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -136,7 +136,7 @@
 					"path": [
 						"api",
 						"products",
-						"8"
+						"1"
 					]
 				}
 			},
