@@ -116,7 +116,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\r\n    \"image_url\": \"https://th.bing.com/th?id=OIP.iuzg3YEJ50tqSKDgls8xWwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2\"\r\n  }\r\n",
+					"raw": "{\r\n\r\n    \"image_url\": \"https://cdn-fsly.yottaa.net/596fc2e932f01c02ab33ec55/o~f_webp/v~4b.7a.0.0/https://shop.samsonite.com/dw/image/v2/AAUE_PRD/on/demandware.static/-/Sites-product-catalog/default/dw393a9696/collections/_samsonite/modern-utility/500x500/895765794be01.jpg\"\r\n  }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -124,7 +124,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/1",
+					"raw": "http://127.0.0.1:5000/api/products/5",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -136,7 +136,7 @@
 					"path": [
 						"api",
 						"products",
-						"1"
+						"5"
 					]
 				}
 			},
